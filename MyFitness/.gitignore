@@ -19,5 +19,5 @@
 
 # Ignore Byebug command history file.
 .byebug_history
-# Gemfile romeved.
+# Gemfile removed.
 Gemfile.lock
