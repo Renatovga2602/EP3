@@ -8,9 +8,22 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>.
-    <%= link_to "Editar conta", edit_user_registration_path %> Não é você? <%= link_to "Logoff", destroy_user_session_path, :method => :delete %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+<header class="navbar  navbar-inverse">
+  <div class="navbar-class">
+    <div class="container">
+      <% if user_signed_in? %>
+      Bem vindo(a)! <%= current_user.email %>
+
+      <class="nav navbar-nav">
+        <class="active">
+        <%=link_to "Início", home_index_path%></li>
+        <%=link_to "Minha página", edit_user_registration_path %></li>
+
+    <%= link_to "Editar conta", edit_user_registration_path %> Não é você? <%= link_to "Sair", destroy_user_session_path, :method => :delete %>
     <% else %>
     <%= link_to "Cadastre-se", new_user_registration_path %> ou <%= link_to "Entre", new_user_session_path %>
     <% end %>
