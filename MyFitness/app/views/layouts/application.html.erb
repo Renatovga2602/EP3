@@ -7,8 +7,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <% if user_signed_in? %>
+    Signed in as <%= current_user.email %>.
+    <%= link_to "Editar conta", edit_user_registration_path %> Não é você? <%= link_to "Logoff", destroy_user_session_path, :method => :delete %>
+    <% else %>
+    <%= link_to "Cadastre-se", new_user_registration_path %> ou <%= link_to "Entre", new_user_session_path %>
+    <% end %>
+  </div>
+
+</div>
     <%= yield %>
   </body>
 </html>

@@ -3,15 +3,6 @@
   <%= link_to "Cadastre-se", new_user_registration_path%><br />
   <%= link_to "Login", new_user_session_path %><br />
 
-  <% if user_signed_in? %>
-  Signed in as <%= current_user.email %>.
-  <%= link_to "Editar conta", edit_user_registration_path %>
-  <br /><br />Não é você? 
-  <%= link_to "Logoff", destroy_user_session_path, :method => :delete %>
-  <% else %>
-  <%= link_to "Cadastre-se", new_user_registration_path %> ou <%= link_to "Entre", new_user_session_path %>
-  <% end %>
-
   <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, id: "flash_#{name}" %>
   <% end %>
