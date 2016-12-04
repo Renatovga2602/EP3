@@ -12,21 +12,23 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-<header class="navbar  navbar-inverse-fixed-top">
-  <div class="navbar-class">
-    <div class="container">
-      <% if user_signed_in? %>
-      Bem vindo(a)! <%= current_user.email %>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <ul class= "nav navbar-nav">
 
-      <class="nav navbar-nav">
-        <class="active">
-        <%=link_to "Início", home_index_path%></li>
-        <%=link_to "Minha página", edit_user_registration_path %></li>
+  <% if user_signed_in? %><p class="navbar-text">Bem vindo(a)! <%= current_user.email %></p>
+  <li><%=link_to "Início", home_index_path%></li>
+  <li><%=link_to "Minha página", edit_user_registration_path %></li>
 
-    <%= link_to "Editar conta", edit_user_registration_path %> Não é você? <%= link_to "Sair", destroy_user_session_path, :method => :delete %>
-    <% else %>
-    <%= link_to "Cadastre-se", new_user_registration_path %> ou <%= link_to "Entre", new_user_session_path %>
-    <% end %>
+  <li><%= link_to "Editar conta", edit_user_registration_path%></li> <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %>
+  <% else %>
+  <li><%= link_to "Cadastre-se", new_user_registration_path%></li> <p class="navbar-text">ou</p> <li><%= link_to "Entre", new_user_session_path %></li>
+  <% end %>
+
+      </ul>
+    </nav>
+
+</div>
+
   </div>
 
 </div>
