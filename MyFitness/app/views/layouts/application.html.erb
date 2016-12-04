@@ -8,24 +8,20 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <ul class= "nav navbar-nav">
 
+<li><%=link_to "Home", home_index_path%></li>
   <% if user_signed_in? %><p class="navbar-text">Bem vindo(a)! <%= current_user.email %></p>
   <li><%=link_to "Início", home_index_path%></li>
   <li><%=link_to "Minha página", edit_user_registration_path %></li>
 
   <li><%= link_to "Editar conta", edit_user_registration_path%></li> <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %>
   <% else %>
-  <li><%= link_to "Cadastre-se", new_user_registration_path%></li> <p class="navbar-text">ou</p> <li><%= link_to "Entre", new_user_session_path %></li>
+  <li><%= link_to "Entre", new_user_session_path %></li> <li><%= link_to "Cadastre-se", new_user_registration_path%></li>
   <% end %>
-
-      </ul>
-    </nav>
+</ul>
+</nav>
 
 </div>
 

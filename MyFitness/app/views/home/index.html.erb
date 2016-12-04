@@ -1,7 +1,8 @@
-<h1><center>Bem vindo ao MyFitness!</center></h1>
-
-  <%= link_to "Cadastre-se", new_user_registration_path%><br />
-  <%= link_to "Login", new_user_session_path %><br />
+<div class="jumbotron">
+  <h1><center>Bem-vindo ao MyFitness!</center></h1>
+  <center><p>A sua plataforma fitness.</p></center></br>
+  <center><p><a class="btn btn-primary btn-lg" href="#" role="button">Saiba mais</a></p></center>
+</div>
 
   <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, id: "flash_#{name}" %>
