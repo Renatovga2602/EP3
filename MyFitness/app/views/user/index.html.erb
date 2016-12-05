@@ -17,16 +17,16 @@
   </thead>
 
   <tbody>
-    <% @alunos.each do |aluno| %>
+    <% @users.each do |user| %>
       <tr>
-        <td><%= aluno.nome %></td>
-        <td><%= aluno.email %></td>
-        <td><%= aluno.telefone %></td>
-        <td><%= aluno.peso %></td>
-        <td><%= aluno.altura %></td>
-        <td><%= link_to 'Show', aluno %></td>
-        <td><%= link_to 'Edit', edit_aluno_path(aluno) %></td>
-        <td><%= link_to 'Destroy', aluno, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= user.nome %></td>
+        <td><%= user.email %></td>
+        <td><%= user.telefone %></td>
+        <td><%= user.peso %></td>
+        <td><%= user.altura %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

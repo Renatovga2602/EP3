@@ -1,6 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  protected
-  def after_sign_up_path_for(resource)
-    new_aluno_path
-  end
+    def sign_up_params
+      params.require(:user).permit(:email, :nome, :telefone, :peso, :altura,:password, :password_confirmation)
+    end
 end
