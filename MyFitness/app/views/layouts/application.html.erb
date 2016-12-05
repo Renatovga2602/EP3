@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyFitness</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "My Fitness" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "My Fitness" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <ul class= "nav navbar-nav">
 
-<li><%=link_to "Home", home_index_path%></li>
-  <% if user_signed_in? %><p class="navbar-text">Bem vindo(a)! <%= current_user.email %></p>
-  <li><%=link_to "Início", home_index_path%></li>
-  <li><%=link_to "Minha página", edit_user_registration_path %></li>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <ul class= "nav navbar-nav">
 
-  <li><%= link_to "Editar conta", edit_user_registration_path%></li> <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %>
-  <% else %>
-  <li><%= link_to "Entre", new_user_session_path %></li> <li><%= link_to "Cadastre-se", new_user_registration_path%></li>
-  <% end %>
-</ul>
-</nav>
+    <li><%=link_to "Home", home_index_path%></li>
+    <% if user_signed_in? %><p class="navbar-text">Bem vindo(a)! <%= current_user.email %></p>
+    <li><%=link_to "Início", home_index_path%></li>
+    <li><%=link_to "Minha página", edit_user_registration_path %></li>
+    <li><%= link_to "Editar conta", edit_user_registration_path%></li> <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %>
+<% else %>
+    <li><%= link_to "Entre", new_user_session_path %></li> <li><%= link_to "Cadastre-se", new_user_registration_path%></li>
+<% end %>
 
-</div>
+    </ul>
+  </nav>
 
-  </div>
+       <%= yield %>
 
-</div>
-    <%= yield %>
   </body>
 </html>
