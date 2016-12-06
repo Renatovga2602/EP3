@@ -12,16 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20161206002143) do
 
-  create_table "alunos", force: :cascade do |t|
-    t.string   "nome"
-    t.string   "email"
-    t.string   "telefone"
-    t.float    "peso"
-    t.float    "altura"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -39,7 +29,7 @@ ActiveRecord::Schema.define(version: 20161206002143) do
     t.string   "peso"
     t.string   "altura"
     t.string   "nome"
-    t.boolean  "is_admin"
+    t.string   "sobrenome"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

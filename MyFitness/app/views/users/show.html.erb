@@ -5,17 +5,17 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>Nome</th>
-      <th>Peso</th>
-      <th>Altura</th>
-      <th>Email</th>
-      <th>Telefone</th>
+      <th><center>Nome</center></th>
+      <th><center>Peso</center></th>
+      <th><center>Altura</center></th>
+      <th><center>Email</center></th>
+      <th><center>Telefone</center></th>
     </tr>
   </thead>
 
   <tbody>
       <tr>
-        <td><%= @user.nome %></td>
+        <td><%= @user.nome+" " + @user.sobrenome %></td>
         <td><%= @user.peso %></td>
         <td><%= @user.altura %></td>
         <td><%= @user.email %></td>
