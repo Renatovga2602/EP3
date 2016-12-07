@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AlunoTest < ActiveSupport::TestCase
+class TreinoTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

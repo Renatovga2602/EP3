@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206230256) do
+ActiveRecord::Schema.define(version: 20161207062904) do
 
   create_table "admin_views", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "treinos", force: :cascade do |t|
+    t.string   "inferior"
+    t.string   "triceps"
+    t.string   "abslombar"
+    t.string   "dorsais"
+    t.string   "deltoides"
+    t.string   "biceps"
+    t.string   "peitorais"
+    t.integer  "series"
+    t.integer  "repeticoes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

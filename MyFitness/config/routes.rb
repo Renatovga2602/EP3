@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :treinos
   devise_for :users, controllers: { registrations: "registrations" }
   resources :admin_views
   get 'tests/show'
