@@ -1,0 +1,52 @@
+<br><center><h1>Busque seu treino</h1></center></br>
+<p><h3>Utilize a barra de busca e encontre seu treino pelo email cadastrado.</h3></p>
+
+<center><%= form_tag(treinos_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Buscar treino" %>
+    <%= submit_tag "Buscar", :name => nil %></center>
+<% end %>
+</br>
+
+<% if @treinos.blank? %>
+  <h5>Seu treino ainda não foi criado pelo personal.</h5>
+<% end %>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <center><th>Inferior</th></center>
+      <center><th>Triceps</th></center>
+      <center><th>Abslombar</th></center>
+      <center><th>Dorsais</th></center>
+      <center><th>Deltoides</th></center>
+      <center><th>Biceps</th></center>
+      <center><th>Peitorais</th></center>
+      <center><th>Series</th></center>
+      <center><th>Repeticoes</th></center>
+      <center><th>Email</th></center>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @treinos.each do |treino| %>
+      <tr>
+        <td><%= treino.inferior %></td>
+        <td><%= treino.triceps %></td>
+        <td><%= treino.abslombar %></td>
+        <td><%= treino.dorsais %></td>
+        <td><%= treino.deltoides %></td>
+        <td><%= treino.biceps %></td>
+        <td><%= treino.peitorais %></td>
+        <td><%= treino.series %></td>
+        <td><%= treino.repeticoes %></td>
+        <td><%= treino.email %></td>
+        <td><%= link_to 'Acesse', treino %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Voltar', users_show_path %>

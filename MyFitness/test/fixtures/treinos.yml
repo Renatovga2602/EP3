@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  inferior: MyString
+  triceps: MyString
+  abslombar: MyString
+  dorsais: MyString
+  deltoides: MyString
+  biceps: MyString
+  peitorais: MyString
+  series: 1
+  repeticoes: 1
+  email: MyString
+
+two:
+  inferior: MyString
+  triceps: MyString
+  abslombar: MyString
+  dorsais: MyString
+  deltoides: MyString
+  biceps: MyString
+  peitorais: MyString
+  series: 1
+  repeticoes: 1
+  email: MyString
