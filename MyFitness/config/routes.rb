@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :treinos
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'users/show'
   get 'static_pages/sobre'

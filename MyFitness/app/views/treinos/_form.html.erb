@@ -1,0 +1,67 @@
+<%= form_for(treino) do |f| %>
+  <% if treino.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(treino.errors.count, "error") %> prohibited this treino from being saved:</h2>
+
+      <ul>
+      <% treino.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :inferior %>
+    <%= f.text_field :inferior %>
+  </div>
+
+  <div class="field">
+    <%= f.label :triceps %>
+    <%= f.text_field :triceps %>
+  </div>
+
+  <div class="field">
+    <%= f.label :abslombar %>
+    <%= f.text_field :abslombar %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dorsais %>
+    <%= f.text_field :dorsais %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deltoides %>
+    <%= f.text_field :deltoides %>
+  </div>
+
+  <div class="field">
+    <%= f.label :biceps %>
+    <%= f.text_field :biceps %>
+  </div>
+
+  <div class="field">
+    <%= f.label :peitorais %>
+    <%= f.text_field :peitorais %>
+  </div>
+
+  <div class="field">
+    <%= f.label :series %>
+    <%= f.number_field :series %>
+  </div>
+
+  <div class="field">
+    <%= f.label :repeticoes %>
+    <%= f.number_field :repeticoes %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
