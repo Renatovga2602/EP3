@@ -1,0 +1,1 @@
+json.partial! "admin_views/admin_view", admin_view: @admin_view

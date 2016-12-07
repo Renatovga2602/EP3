@@ -1,0 +1,27 @@
+</br><h1><center>Gerencie seus Alunos</center></h1>
+
+<div class="container">
+  <p><h3>Consulte seus alunos e crie os treinos.</h3></p>
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th><center>Nome</center></th>
+      <th><center>Peso</center></th>
+      <th><center>Altura</center></th>
+      <th><center>Email</center></th>
+      <th><center>Telefone</center></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+          <tr>
+          <td><%= user.nome+" " + user.sobrenome %></td>
+          <td><%= user.peso %></td>
+          <td><%= user.altura %></td>
+          <td><%= user.email %></td>
+          <td><%= user.telefone %></td>
+<tr>
+    <% end %>
+  </tbody>
+</table>

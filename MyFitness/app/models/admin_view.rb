@@ -1,0 +1,2 @@
+class AdminView < ApplicationRecord
+end
